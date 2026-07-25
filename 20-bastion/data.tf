@@ -2,11 +2,10 @@ data "aws_ami" "joindevops" {
     owners           = ["526426842890"]
     most_recent      = true
     
-    filter {
-        name   = "name"
-        values = ["redhat-9-DevOps-Practice"]
-    }
-
+   filter {
+  name   = "name"
+  values = ["Redhat-9-DevOps-Practice"]
+}
     filter {
         name   = "root-device-type"
         values = ["ebs"]
