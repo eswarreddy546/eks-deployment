@@ -60,6 +60,8 @@ variable "eks_nodegroup_green_version" {
 variable "enable_blue" {
   type        = bool
   description = "Enable Blue Node Group"
+  default     = true
+
 }
 
 ##################################################
@@ -69,4 +71,6 @@ variable "enable_blue" {
 variable "enable_green" {
   type        = bool
   description = "Enable Green Node Group"
+  default     = true
+
 }
