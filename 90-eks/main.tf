@@ -76,11 +76,19 @@ module "eks" {
       ami_type           = "AL2023_x86_64_STANDARD"
       kubernetes_version = var.eks_nodegroup_blue_version
 
+
+
       instance_types = ["t3.small"]
 
-      min_size     = 2
-      desired_size = 2
-      max_size     = 10
+        min_size     = 1
+        desired_size = 1
+        max_size     = 2
+
+      # instance_types = ["t3.small"]
+
+      # min_size     = 2
+      # desired_size = 2
+      # max_size     = 10
 
       iam_role_additional_policies = {
         amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
@@ -128,11 +136,17 @@ module "eks" {
       kubernetes_version = var.eks_nodegroup_green_version
 
     
+
     instance_types = ["t3.small"]
 
-      min_size     = 2
-      desired_size = 2
-      max_size     = 10
+      min_size     = 1
+      desired_size = 1
+      max_size     = 2
+    # instance_types = ["t3.small"]
+
+    #   min_size     = 2
+    #   desired_size = 2
+    #   max_size     = 10
 
       iam_role_additional_policies = {
         amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
