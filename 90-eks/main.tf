@@ -76,7 +76,7 @@ module "eks" {
       ami_type           = "AL2023_x86_64_STANDARD"
       kubernetes_version = var.eks_nodegroup_blue_version
 
-      instance_types = ["t3.medium"]
+      instance_types = ["t3.small"]
 
       min_size     = 2
       desired_size = 2
@@ -128,8 +128,8 @@ module "eks" {
       kubernetes_version = var.eks_nodegroup_green_version
 
     
-    instance_types = ["t3.medium"]
-    
+    instance_types = ["t3.small"]
+
       min_size     = 2
       desired_size = 2
       max_size     = 10
