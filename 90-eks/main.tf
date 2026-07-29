@@ -71,18 +71,18 @@ module "eks" {
     # Production workloads are currently running here.
     ##################################################
 
-    blue = {
-      create             = var.enable_blue
-      ami_type           = "AL2023_x86_64_STANDARD"
-      kubernetes_version = var.eks_nodegroup_blue_version
+    # blue = {
+    #   create             = var.enable_blue
+    #   ami_type           = "AL2023_x86_64_STANDARD"
+    #   kubernetes_version = var.eks_nodegroup_blue_version
 
 
 
-      instance_types = ["t3.small"]
+    #   instance_types = ["t3.small"]
 
-        min_size     = 1
-        desired_size = 1
-        max_size     = 2
+    #     min_size     = 1
+    #     desired_size = 1
+    #     max_size     = 2
 
       # instance_types = ["t3.small"]
 
@@ -90,15 +90,15 @@ module "eks" {
       # desired_size = 2
       # max_size     = 10
 
-      iam_role_additional_policies = {
-        amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
-        amazonEBS = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
-      }
+    #   iam_role_additional_policies = {
+    #     amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
+    #     amazonEBS = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+    #   }
 
-      labels = {
-        nodegroup = "blue"
-      }
-    }
+    #   labels = {
+    #     nodegroup = "blue"
+    #   }
+    # }
 
     ##################################################
     # GREEN NODE GROUP (UPGRADE TARGET)
@@ -155,13 +155,13 @@ module "eks" {
 
       # Prevent workloads from scheduling
       # until validation is completed.
-      taints = {
-        upgrade = {
-          key    = "upgrade"
-          value  = "true"
-          effect = "NO_SCHEDULE"
-        }
-      }
+      # taints = {
+      #   upgrade = {
+      #     key    = "upgrade"
+      #     value  = "true"
+      #     effect = "NO_SCHEDULE"
+      #   }
+      # }
 
       labels = {
         nodegroup = "green"
